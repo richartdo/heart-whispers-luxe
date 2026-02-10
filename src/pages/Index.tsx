@@ -1,11 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import FloatingPetals from "@/components/valentine/FloatingPetals";
+import OpeningSection from "@/components/valentine/OpeningSection";
+import ScenerySection from "@/components/valentine/ScenerySection";
+import EmotionalCards from "@/components/valentine/EmotionalCards";
+import SensualSection from "@/components/valentine/SensualSection";
+import ProposalSection from "@/components/valentine/ProposalSection";
+import ResponseSection from "@/components/valentine/ResponseSection";
+import FinalScreen from "@/components/valentine/FinalScreen";
 
 const Index = () => {
+  const [showIntro, setShowIntro] = useState(true);
+  const [accepted, setAccepted] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="bg-midnight-deep min-h-screen">
+      {showIntro && <OpeningSection onEnter={() => setShowIntro(false)} />}
+      
+      {!showIntro && <FloatingPetals count={12} />}
+
+      <div className={showIntro ? "opacity-0 pointer-events-none" : "opacity-100 transition-opacity duration-1000"}>
+        <ScenerySection />
+        <EmotionalCards />
+        <SensualSection />
+        <ProposalSection onAccept={() => setAccepted(true)} />
+        {accepted && (
+          <>
+            <ResponseSection />
+            <FinalScreen />
+          </>
+        )}
       </div>
     </div>
   );
