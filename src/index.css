@@ -147,7 +147,7 @@
   }
 
   .btn-romantic {
-    @apply px-8 py-4 rounded-full text-lg font-medium tracking-wide transition-all duration-500;
+    @apply px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium tracking-wide transition-all duration-500;
     font-family: var(--font-display);
     background: linear-gradient(135deg, hsl(var(--wine)), hsl(var(--rose) / 0.8));
     color: hsl(var(--cream));
@@ -160,7 +160,7 @@
   }
 
   .btn-accept {
-    @apply px-10 py-5 rounded-full text-xl font-semibold tracking-wide transition-all duration-500;
+    @apply px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-semibold tracking-wide transition-all duration-500;
     font-family: var(--font-display);
     background: linear-gradient(135deg, hsl(var(--rose)), hsl(var(--wine)));
     color: hsl(var(--cream));
@@ -170,6 +170,16 @@
   .btn-accept:hover {
     box-shadow: 0 0 60px hsl(var(--rose) / 0.6), 0 8px 40px hsl(0 0% 0% / 0.5);
     transform: translateY(-3px) scale(1.02);
+  }
+
+  @media (max-width: 640px) {
+    .btn-accept:hover {
+      transform: translateY(-2px) scale(1.01);
+    }
+    
+    .btn-romantic:hover {
+      transform: translateY(-1px);
+    }
   }
 
   .section-fullscreen {

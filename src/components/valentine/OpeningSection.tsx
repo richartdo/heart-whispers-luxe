@@ -29,9 +29,9 @@ const OpeningSection = ({ onEnter }: Props) => {
           />
           <div className="overlay-dark" />
 
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-2xl">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 max-w-2xl">
             <motion.p
-              className="text-cream text-xl md:text-2xl font-body italic mb-6"
+              className="text-cream text-lg sm:text-xl md:text-2xl font-body italic mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1.2 }}
@@ -40,7 +40,7 @@ const OpeningSection = ({ onEnter }: Props) => {
             </motion.p>
 
             <motion.p
-              className="text-romantic text-2xl md:text-3xl font-display mb-6"
+              className="text-romantic text-xl sm:text-2xl md:text-3xl font-display mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2, duration: 1.2 }}
@@ -49,7 +49,7 @@ const OpeningSection = ({ onEnter }: Props) => {
             </motion.p>
 
             <motion.p
-              className="text-champagne text-lg md:text-xl font-body italic mb-12"
+              className="text-champagne text-base sm:text-lg md:text-xl font-body italic mb-8 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 3.5, duration: 1.2 }}
@@ -58,7 +58,7 @@ const OpeningSection = ({ onEnter }: Props) => {
             </motion.p>
 
             <motion.button
-              className="btn-romantic animate-glow-pulse"
+              className="btn-romantic animate-glow-pulse text-base sm:text-lg px-6 sm:px-8"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 5, duration: 0.8 }}

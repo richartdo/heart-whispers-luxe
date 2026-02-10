@@ -22,9 +22,9 @@ const ProposalSection = ({ onAccept }: Props) => {
       <Sparkles count={40} />
       {accepted && <FloatingHearts count={40} burst />}
 
-      <div className="relative z-10 text-center px-6 max-w-2xl">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-2xl">
         <motion.div
-          className="text-6xl md:text-8xl mb-8 inline-block"
+          className="text-5xl sm:text-6xl md:text-8xl mb-6 sm:mb-8 inline-block"
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : {}}
           transition={{ type: "spring", duration: 1, delay: 0.3 }}
@@ -33,7 +33,7 @@ const ProposalSection = ({ onAccept }: Props) => {
         </motion.div>
 
         <motion.h2
-          className="text-cream text-4xl md:text-6xl font-display mb-12 glow-text"
+          className="text-cream text-3xl sm:text-4xl md:text-6xl font-display mb-8 sm:mb-12 glow-text"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 0.5 }}
@@ -43,13 +43,13 @@ const ProposalSection = ({ onAccept }: Props) => {
 
         {!accepted ? (
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 1.2 }}
           >
             <motion.button
-              className="btn-accept"
+              className="btn-accept text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5"
               onClick={handleAccept}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -57,7 +57,7 @@ const ProposalSection = ({ onAccept }: Props) => {
               Yes, I will 💕
             </motion.button>
             <motion.button
-              className="btn-accept"
+              className="btn-accept text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5"
               onClick={handleAccept}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -71,7 +71,7 @@ const ProposalSection = ({ onAccept }: Props) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.8 }}
           >
-            <p className="text-romantic text-3xl md:text-5xl font-display glow-text">
+            <p className="text-romantic text-2xl sm:text-3xl md:text-5xl font-display glow-text">
               You just made my heart overflow 💖
             </p>
           </motion.div>

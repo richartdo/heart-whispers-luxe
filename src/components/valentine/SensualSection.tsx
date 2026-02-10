@@ -16,9 +16,9 @@ const SensualSection = () => {
       />
       <div className="overlay-warm" />
 
-      <div className="relative z-10 text-center px-6 max-w-2xl space-y-8">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-2xl space-y-4 sm:space-y-8">
         <motion.p
-          className="text-cream text-2xl md:text-4xl font-display italic glow-champagne"
+          className="text-cream text-xl sm:text-2xl md:text-4xl font-display italic glow-champagne"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2 }}
@@ -27,7 +27,7 @@ const SensualSection = () => {
         </motion.p>
 
         <motion.p
-          className="text-romantic text-xl md:text-3xl font-display"
+          className="text-romantic text-lg sm:text-xl md:text-3xl font-display"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -36,7 +36,7 @@ const SensualSection = () => {
         </motion.p>
 
         <motion.p
-          className="text-champagne text-lg md:text-2xl font-body italic"
+          className="text-champagne text-base sm:text-lg md:text-2xl font-body italic"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 1.6 }}

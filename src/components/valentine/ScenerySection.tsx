@@ -41,12 +41,12 @@ const SceneSlide = ({ image, caption }: { image: string; caption: string }) => {
       />
       <div className="overlay-warm" />
       <motion.div
-        className="relative z-10 text-center px-6 max-w-3xl"
+        className="relative z-10 text-center px-4 sm:px-6 max-w-3xl"
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
         transition={{ duration: 1.2, delay: 0.3 }}
       >
-        <p className="text-cream text-2xl md:text-4xl font-display italic leading-relaxed glow-champagne">
+        <p className="text-cream text-xl sm:text-2xl md:text-4xl font-display italic leading-relaxed glow-champagne">
           "{caption}"
         </p>
       </motion.div>
