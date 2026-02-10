@@ -1,95 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 50% 8%;
+    --foreground: 30 60% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 40% 12%;
+    --card-foreground: 30 60% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 40% 12%;
+    --popover-foreground: 30 60% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 340 78% 24%;
+    --primary-foreground: 30 60% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 345 100% 74%;
+    --secondary-foreground: 220 50% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 30 30% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 60% 82%;
+    --accent-foreground: 220 50% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 30% 25%;
+    --input: 340 30% 25%;
+    --ring: 345 100% 74%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom romantic tokens */
+    --wine: 340 78% 24%;
+    --wine-deep: 340 85% 18%;
+    --rose: 345 100% 74%;
+    --rose-soft: 345 80% 82%;
+    --champagne: 40 60% 82%;
+    --cream: 30 60% 95%;
+    --midnight: 220 50% 12%;
+    --midnight-deep: 220 55% 8%;
+
+    --gradient-romantic: linear-gradient(135deg, hsl(340 78% 24%), hsl(345 100% 74% / 0.3), hsl(220 50% 12%));
+    --gradient-warm: linear-gradient(180deg, hsl(340 78% 24% / 0.8), hsl(30 60% 95% / 0.05));
+    --gradient-sunset: linear-gradient(180deg, hsl(20 80% 50% / 0.3), hsl(340 78% 24% / 0.6), hsl(220 50% 8%));
+
+    --shadow-romantic: 0 0 60px hsl(345 100% 74% / 0.15);
+    --shadow-glow: 0 0 40px hsl(345 100% 74% / 0.25);
+    --shadow-warm: 0 0 80px hsl(40 60% 82% / 0.1);
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Cormorant Garamond', serif;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,5 +75,176 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-romantic {
+    @apply text-secondary;
+  }
+
+  .text-champagne {
+    color: hsl(var(--champagne));
+  }
+
+  .text-cream {
+    color: hsl(var(--cream));
+  }
+
+  .bg-wine {
+    background-color: hsl(var(--wine));
+  }
+
+  .bg-wine-deep {
+    background-color: hsl(var(--wine-deep));
+  }
+
+  .bg-midnight {
+    background-color: hsl(var(--midnight));
+  }
+
+  .bg-midnight-deep {
+    background-color: hsl(var(--midnight-deep));
+  }
+
+  .glass-romantic {
+    background: hsl(var(--wine) / 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--rose) / 0.15);
+    box-shadow: var(--shadow-romantic);
+  }
+
+  .glass-dark {
+    background: hsl(var(--midnight) / 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--rose) / 0.1);
+  }
+
+  .glow-rose {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px hsl(var(--rose) / 0.4), 0 0 80px hsl(var(--rose) / 0.2);
+  }
+
+  .glow-champagne {
+    text-shadow: 0 0 30px hsl(var(--champagne) / 0.5), 0 0 60px hsl(var(--champagne) / 0.2);
+  }
+
+  .gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .btn-romantic {
+    @apply px-8 py-4 rounded-full text-lg font-medium tracking-wide transition-all duration-500;
+    font-family: var(--font-display);
+    background: linear-gradient(135deg, hsl(var(--wine)), hsl(var(--rose) / 0.8));
+    color: hsl(var(--cream));
+    box-shadow: 0 0 30px hsl(var(--rose) / 0.3), 0 4px 20px hsl(0 0% 0% / 0.3);
+  }
+
+  .btn-romantic:hover {
+    box-shadow: 0 0 50px hsl(var(--rose) / 0.5), 0 4px 30px hsl(0 0% 0% / 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-accept {
+    @apply px-10 py-5 rounded-full text-xl font-semibold tracking-wide transition-all duration-500;
+    font-family: var(--font-display);
+    background: linear-gradient(135deg, hsl(var(--rose)), hsl(var(--wine)));
+    color: hsl(var(--cream));
+    box-shadow: 0 0 40px hsl(var(--rose) / 0.4), 0 8px 32px hsl(0 0% 0% / 0.4);
+  }
+
+  .btn-accept:hover {
+    box-shadow: 0 0 60px hsl(var(--rose) / 0.6), 0 8px 40px hsl(0 0% 0% / 0.5);
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .section-fullscreen {
+    @apply min-h-screen w-full relative flex items-center justify-center overflow-hidden;
+  }
+
+  .overlay-dark {
+    @apply absolute inset-0;
+    background: linear-gradient(180deg, hsl(var(--midnight-deep) / 0.7), hsl(var(--midnight-deep) / 0.85));
+  }
+
+  .overlay-warm {
+    @apply absolute inset-0;
+    background: linear-gradient(180deg, hsl(var(--wine-deep) / 0.6), hsl(var(--midnight-deep) / 0.8));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    75% { transform: translateY(10px) rotate(-3deg); }
+  }
+
+  @keyframes petal-fall {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--rose) / 0.2); }
+    50% { box-shadow: 0 0 40px hsl(var(--rose) / 0.4); }
+  }
+
+  @keyframes candle-flicker {
+    0%, 100% { opacity: 0.8; transform: scaleY(1); }
+    25% { opacity: 1; transform: scaleY(1.05); }
+    50% { opacity: 0.7; transform: scaleY(0.95); }
+    75% { opacity: 0.9; transform: scaleY(1.02); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-petal {
+    animation: petal-fall linear infinite;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-candle {
+    animation: candle-flicker 3s ease-in-out infinite;
   }
 }
