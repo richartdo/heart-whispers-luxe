@@ -41,7 +41,7 @@ const ResponseSection = () => {
               borderColor: "hsl(345, 100%, 74%, 0.2)",
               border: "1px solid hsl(345, 100%, 74%, 0.2)",
             }}
-            placeholder="Write your sweet message..."
+            placeholder="Write your answer here..."
           />
 
           <motion.button
