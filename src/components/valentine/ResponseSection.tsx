@@ -34,12 +34,13 @@ const ResponseSection = () => {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full h-32 rounded-xl border-none p-3 sm:p-4 text-base sm:text-lg font-body resize-none focus:outline-none focus:ring-2 focus:ring-rose"
+            className="w-full h-32 rounded-xl border-none p-3 sm:p-4 text-base sm:text-lg font-body resize-none focus:outline-none focus:ring-2 focus:ring-rose romantic-textarea"
             style={{
               background: "hsl(220, 50%, 12%, 0.8)",
               color: "hsl(30, 60%, 92%)",
               borderColor: "hsl(345, 100%, 74%, 0.2)",
               border: "1px solid hsl(345, 100%, 74%, 0.2)",
+              caretColor: "hsl(345, 100%, 74%)",
             }}
             placeholder="Tell me what's in your heart, my love... ✨"
           />

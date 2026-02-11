@@ -257,4 +257,14 @@
   .animate-candle {
     animation: candle-flicker 3s ease-in-out infinite;
   }
+
+  .romantic-textarea {
+    caret-color: hsl(var(--rose));
+    transition: all 0.3s ease;
+  }
+
+  .romantic-textarea:focus {
+    caret-color: hsl(var(--rose));
+    box-shadow: 0 0 20px hsl(var(--rose) / 0.3) inset, 0 0 20px hsl(var(--rose) / 0.2);
+  }
 }
