@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useContext } from "react";
 import { AudioContext } from "@/pages/Index";
 
-const WHATSAPP_NUMBER = "254743699256";
+const WHATSAPP_NUMBER = "254795594142";
 const DEFAULT_MESSAGE = "Hey love ❤️ I said YES! Happy Valentine 💕";
 
 const ResponseSection = () => {
